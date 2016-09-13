@@ -1,0 +1,108 @@
+#Pseudocode of news posting of CHER
+
+import csv
+
+def main():
+	# Initiate HTML
+	html_head = "HTML Standardized Header"
+	html_body = ""
+	html_foot = "HTML Standardized  Footer"
+	css = "<style></style>"
+
+	# Locate the CSV and read it
+	file = Find the CSV file
+	title = CSV's "event_title" colomn
+	location = CSV's "location" colomn
+	post_date = CSV's "post_date" colomn
+	dead_url = CSV's "dead_url" colomn
+	dead_date = CSV's "dead_date" colomn
+	dead_time = CSV's "dead_time" colomn
+	event_date = CSV's "event_date" colomn
+	event_end = CSV's "event_end" colomn
+	post_url = CSV's "post_url" colomn
+	category = CSV's "category" colomn
+	award_amt = CSV's "award_amt" colomn
+	final_txt = CSV's "final_txt" colomn
+	img_url = CSV's "img_url" colomn
+	
+	# Read CSV
+	col_name = [title, location, post_date, dead_url, dead_date, dead_time, event_date, event_end, post_url, category, award_amt, final_txt, img_url]
+	row_name = [excel's first colomn without A1]
+	csv_content = reader(file)
+	
+	# Call read_content
+	html_body = read_content(csv_content, col_name, row_name)
+	
+	# Print the whole HTML out
+	print(html_head,html_body,css,html_foot)
+
+# Find the content needed and write HTML
+def read_content(csv_content, col_name, row_name)
+	content_html = ''
+	for i in [row_name]
+		for j in [col_name]
+			title_content = csv_content[i][j]
+			location_content = csv_content[i][j]
+			post_date_content = csv_content[i][j]	
+			dead_url_content = csv_content[i][j]	
+			dead_date_content = csv_content[i][j]	
+			dead_time_content = csv_content[i][j]
+			event_date_content = csv_content[i][j]						
+			event_end_content = csv_content[i][j]
+			post_url_content = csv_content[i][j]
+			category_content = csv_content[i][j]
+			award_amt_content = csv_content[i][j]
+			final_txt_content = csv_content[i][j]
+			img_url_content = csv_content[i][j]
+			
+			# Determine if we want to hide the information of this row
+			if category_content == 'event':
+				if event_end_content < date.today()
+					# break the for j in [col_name] loop
+					continue
+			elif category_content == 'funding':
+				if dead_date_content < date.today()
+					# break the for j in [col_name] loop
+					continue
+			else:
+				if post_date_content < date.today() - 90
+					# break the for j in [col_name] loop
+					continue					
+
+			# Add div
+			div_top_html = '<div class="'+i+'">'
+
+			# Add title
+			title_html = '<h1 class="title"><a href="'+post_url_content+'">'+title_content+'</a></h1>'
+			
+			# Add date
+			if category_content == 'event':
+				date_html = '<h3 class="date">'+event_date_content+'</h3>'
+			elif category_content == 'funding':
+				date_html = '<h3 class="date">Deadline: '+dead_date_content+'<a href="'+dead_url_content+'">Register Now</a></h3>'
+			elif category_content == 'trainee':
+				date_html = '<h3 class="date">'+post_date_content+'</h3>'
+			else:
+				date_html = '<h3 class="date">'+post_date_content+'</h3>'
+
+			# Add location or award
+			if category_content == 'funding':
+				location_award_html = '<h3 class="location-award">Funding $'+award_amt_content+'</h3>'
+			else:
+				location_award_html = '<h3 class="location-award">Location: '+location_content+'</h3>'
+
+			# Add image and abstract
+			if img_url_colomn == ''
+				abstract_html = '<p class="abstract">'+final_txt_content+'</p>'
+			else:
+				abstract_html = '<span><img src="'+img_url_content+'"><p class="abstract">'+final_txt_content+'</p></span>'
+			
+			# Add div
+			div_down_html = '</div>'
+
+			# Combine html together
+			content_html = content_html + div_top_html + title_html + date_html + location_award_html + abstract_html + div_down_html
+			return content_html
+
+main()
+			
