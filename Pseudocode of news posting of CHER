@@ -1,76 +1,71 @@
-#Pseudocode of news posting of CHER
+# Pseudocode of news posting of CHER
+# Convert pseudocode to Python code
 
-import csv
+import csv, sys
+from bs4 import BeautifulSoup
+import time
+from datetime import date
 
 def main():
 	# Initiate HTML
-	html_head = "HTML Standardized Header"
-	html_body = ""
-	html_foot = "HTML Standardized  Footer"
-	css = "<style></style>"
+	html_head = '<!DOCTYPE html><html lang="en"><head>HTML Standardized Header</head>'
+	html_body = ''
+	html_foot = '<footer>HTML Standardized Footer<footer></html>'
+	css = '<style></style>'
 
 	# Locate the CSV and read it
-	file = Find the CSV file
-	title = CSV's "event_title" colomn
-	location = CSV's "location" colomn
-	post_date = CSV's "post_date" colomn
-	dead_url = CSV's "dead_url" colomn
-	dead_date = CSV's "dead_date" colomn
-	dead_time = CSV's "dead_time" colomn
-	event_date = CSV's "event_date" colomn
-	event_end = CSV's "event_end" colomn
-	post_url = CSV's "post_url" colomn
-	category = CSV's "category" colomn
-	award_amt = CSV's "award_amt" colomn
-	final_txt = CSV's "final_txt" colomn
-	img_url = CSV's "img_url" colomn
-	
-	# Read CSV
-	col_name = [title, location, post_date, dead_url, dead_date, dead_time, event_date, event_end, post_url, category, award_amt, final_txt, img_url]
-	row_name = [excel's first colomn without A1]
-	csv_content = reader(file)
+	file = input('Please enter your CSV path: ')
 	
 	# Call read_content
-	html_body = read_content(csv_content, col_name, row_name)
+	html_body = '<body>'+read_content(file)+'</body>'
 	
 	# Print the whole HTML out
-	print(html_head,html_body,css,html_foot)
+	html_doc = html_head + html_body + css + html_foot
+	soup = BeautifulSoup(html_doc, 'html.parser')
+	result = soup.prettify()
+	output_path = input('Please enter output path: ')
+	f = open(output_path,'w')
+	f.write(result)
+	f.close()
 
 # Find the content needed and write HTML
-def read_content(csv_content, col_name, row_name)
+def read_content(file):
 	content_html = ''
-	for i in [row_name]
-		for j in [col_name]
-			title_content = csv_content[i][j]
-			location_content = csv_content[i][j]
-			post_date_content = csv_content[i][j]	
-			dead_url_content = csv_content[i][j]	
-			dead_date_content = csv_content[i][j]	
-			dead_time_content = csv_content[i][j]
-			event_date_content = csv_content[i][j]						
-			event_end_content = csv_content[i][j]
-			post_url_content = csv_content[i][j]
-			category_content = csv_content[i][j]
-			award_amt_content = csv_content[i][j]
-			final_txt_content = csv_content[i][j]
-			img_url_content = csv_content[i][j]
+	# Read CSV
+	with open(file, newline='', encoding='utf-8') as csvfile:
+		csv_content = csv.DictReader(csvfile)
+		for row in csv_content:
+			id_content = row['ID']
+			title_content = row['event_title']
+			location_content = row['location']
+			post_date_content = row['post_date']	
+			dead_url_content = row['dead_url']	
+			dead_date_content = row['dead_date']	
+			dead_time_content = row['dead_time']
+			event_date_content = row['event_date']						
+			event_end_content = row['event_end']
+			post_url_content = row['post_url']
+			category_content = row['category']
+			award_amt_content = row['award_amt']
+			final_txt_content = row['final_txt']
+			img_url_content = row['img_url']
 			
 			# Determine if we want to hide the information of this row
 			if category_content == 'event':
-				if event_end_content < date.today()
-					# break the for j in [col_name] loop
+				if event_end_content < date.today():
+					# break current loop
 					continue
 			elif category_content == 'funding':
-				if dead_date_content < date.today()
-					# break the for j in [col_name] loop
+				if dead_date_content < date.today():
+					# break current loop
 					continue
 			else:
-				if post_date_content < date.today() - 90
-					# break the for j in [col_name] loop
+				if post_date_content < date.today() - 90:
+					# break current loop
 					continue					
 
 			# Add div
-			div_top_html = '<div class="'+i+'">'
+			div_top_html = '<div class="'+id_content+'">'
 
 			# Add title
 			title_html = '<h1 class="title"><a href="'+post_url_content+'">'+title_content+'</a></h1>'
@@ -92,7 +87,7 @@ def read_content(csv_content, col_name, row_name)
 				location_award_html = '<h3 class="location-award">Location: '+location_content+'</h3>'
 
 			# Add image and abstract
-			if img_url_colomn == ''
+			if img_url_content == '':
 				abstract_html = '<p class="abstract">'+final_txt_content+'</p>'
 			else:
 				abstract_html = '<span><img src="'+img_url_content+'"><p class="abstract">'+final_txt_content+'</p></span>'
