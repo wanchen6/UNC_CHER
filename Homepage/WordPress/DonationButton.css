@@ -1,0 +1,25 @@
+/* Donate Button CSS*/
+.cher-donate {
+    text-align: center;
+    width: 100%;
+}   
+.cher-donate h1{
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: rgba(86,160,211,0.8);
+    border-radius: 10px;
+    border: #fff 4px solid;
+}
+
+.cher-donate h1:hover {
+    background-color: rgba(255,255,255,0.8);
+    border: #56a0d3 4px solid;
+}
+
+.cher-donate h1 a {
+    color: #fff;
+}
+.cher-donate h1 a:hover {
+    color: #56a0d3;
+}
