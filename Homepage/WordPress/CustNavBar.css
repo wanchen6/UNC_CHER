@@ -1,0 +1,66 @@
+
+/*<li class="active menu-logo"><a href="https://cher.unc.edu/">logo</a></li>*/
+
+.nav {
+    display: inline-flex;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 40px;
+    width: 100%;
+    text-align: center;
+}
+
+.nav>li {
+    -webkit-box-flex-grow: 1;
+    -moz-box-flex-grow: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-grow: 1;
+    flex-grow: 1;
+    list-style-position: inside;
+    display: inline-block;
+    position: relative;
+    margin-top: 20px;
+    padding: 10px 1.5% 0 1.5%;
+    border-bottom: #fff 2px solid;
+    text-align: center;   
+}
+
+.nav>li:hover {
+    border-bottom: none;
+}
+
+li.active.menu-logo {
+    background-image: url(https://cher.unc.edu/files/2016/09/CHER_logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 20%;
+    height: 0;
+    overflow: hidden;
+    padding-top: 5%;
+    padding-bottom: 20px;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: -20px;
+    border-bottom: none;
+}
+li.active.menu-logo a {
+    background-color: transparent;
+}
+
+@media (min-width: 782px).navbar-brand {
+    display: none;
+}
+
+
+.navbar-default {
+    box-shadow: none;
+}
+.navbar {
+    font-weight: 300;
+    font-size: 1.1em;
+    text-transform: uppercase;
+}
+.navbar-default {
+    background-color: transparent;
+    border-color: transparent;
+}
