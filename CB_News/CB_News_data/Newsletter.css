@@ -1,0 +1,251 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	background-color: #7bafd4;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+	width: 100%;
+	height: 100%;
+}
+h1, h2, h3, h4, h5 {
+	color: #2F5597;
+	margin: 5px 0;
+}
+h1 {
+	font-size: 20px;
+	line-height: 30px;
+	font-style:italic;
+	font-weight: 500;
+	margin: 10px 0 10px 0;
+}
+h2 {
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 25px;
+}
+h3 {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 22px;
+}
+h4 {
+	font-size: 14px;
+	line-height: 18px;
+	font-style:italic;
+	font-weight: 300;
+}
+h5,p {
+	font-size: 12px;
+	line-height: 18px;
+}
+p {
+	margin-top: 10px;
+	color: #4f4f4f;
+}
+a {
+  color: #2F5597;
+  text-decoration: none;
+}
+a:hover {
+  color: #56a0d3;
+}
+table {
+	border: 0;
+	max-width: 600px;
+	background-color: #fff;
+	border-collapse: collapse;
+}
+td {
+	padding: 5px 10px;
+	vertical-align: top;
+}
+.section-title, .events-title {
+	border-bottom: 1px #2F5597 solid;
+	background-color: #fff;
+	margin: 0;
+    padding: 10px 10px;
+	width: 580px;
+	text-align: left;
+}
+.events-title {
+	background-color: #F2F2F2;	
+}
+.title {
+	margin: 0;
+}
+.personnel {
+	margin: 0;
+}
+img:hover {
+	opacity: 0.8;
+}
+/*
+  ========================================
+  Header Section
+  ========================================
+*/
+.cb-browser-link {
+	background-color: #F2F2F2;
+}
+.cb-browser-link td {
+	padding: 5px;
+	text-align: center;
+}
+.cb-browser-link td p {
+	margin: 0;
+}
+.cb-header {
+	background-color: #CCECFF;
+}
+.cb-header td{
+	width: 50%;
+}
+.share {
+	font-style:normal;
+	margin-top: 5px;
+}
+.cb-logo {
+	width: 250px;
+	text-align: center;
+	padding: 15px;
+}
+.social-logo {
+	width: 40px;
+	padding: 0 5px;
+}
+.cb-navbar {
+	background-color: #2F5597;
+	text-align: center;
+}
+.cb-navbar td h3 a {
+	color: #fff;
+}
+.cb-navbar td h3 a:hover {
+	color: #56a0d3;
+}
+#cb-nav {
+    color: #fff;
+	margin: 0;
+}
+/*
+  ========================================
+  Events Section
+  ========================================
+*/
+.event-left {
+	width: 33%;
+}
+.event-right {
+	width: 67%;
+}
+.speaker-img {
+	max-height: 150px;
+	width: auto;
+	margin-top: 5px;
+}
+#cb-events table tbody{
+	background-color: #F2F2F2;
+}
+/*
+  ========================================
+  News Section
+  ========================================
+*/
+.news-left {
+	width: 67%;
+}
+.news-right {
+	width: 33%;
+	text-align: center;
+}
+.news-img {
+	margin: 5px;
+	max-height: 150px;
+	width: auto;
+}
+/*
+  ========================================
+  Publicatoins Section
+  ========================================
+*/
+#cb-publications table tbody tr td p {
+	margin:0;
+}
+/*
+  ========================================
+  Footer Section
+  ========================================
+*/
+.cb-footer {
+	max-width: 600px;
+	background-color: #CCECFF;	
+	text-align: center;
+	padding-bottom: 5px;
+}
+.social-media {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.social-media.social-logo {
+	margin: 10px;
+}
+.contact{
+	margin-top: 18px;
+}
+.footer-button div {
+	border: 2px #4f4f4f solid;
+	border-radius: 3px;
+	background-color: #F2F2F2;
+	display: inline-block;
+	padding: 5px;
+}
+.footer-button div:hover {
+	background-color: #2F5597;
+}
+.footer-button a {
+	color: #4f4f4f;
+}
+.footer-button a:hover {
+	color: #fff;
+}
+/*
+  ========================================
+  Responsive
+  ========================================
+*/
+@media only screen and (max-width: 480px){
+	.cb-header td {
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+	.event-right,
+	.event-left {
+		display: block;
+		width: 100%;
+	}
+	.event-left {
+		text-align: center;
+	}
+	.speaker-img {
+		width: 100%;
+		height: auto;
+		max-height: none;
+	}
+}
+@media only screen and (min-width: 1500px){
+	table {
+		max-width: 900px;
+	}
+	.cb-footer {
+		max-width: 900px;
+	}
+	.section-title, .news-title {
+		width: 880px;
+	}
+	td {
+		padding: 5px 50px;
+	}
+}
