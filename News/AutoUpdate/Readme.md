@@ -1,4 +1,4 @@
-The Python script is for updating CHER newsletter regularly. Before run Python script, you have to install Python 3. Please find the instruction for download and installation here: https://www.python.org/downloads/.
+The Python script is for updating CHER newsletter regularly. Before run Python script, you have to install Python 3. Please find the instruction for downloading and installation here: https://www.python.org/downloads/.
 #### Please follow the following steps to run the script:
 1. Make sure you have Python3 installed.
 2. Check your scripts and data, store them in one folder.
