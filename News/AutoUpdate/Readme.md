@@ -2,16 +2,17 @@ The Python script is for updating CHER newsletter regularly. Before run Python s
 #### Please follow the following steps to run the script:
 1. Make sure you have Python3 installed.
 2. Check your scripts and data, store them in one folder.
-    * Python script: NewsUpdateQualtrics_v24.py
-    * Institutions (name, url): institution.csv
+    * Python script: [NewsUpdateQualtrics_v24.py](NewsUpdateQualtrics_v24.py)
+    * Institutions (name, url): [institution.csv](institution.csv)
     * Executable script for Windows or Mac
-      * For Windows: newsletter_win.bat
-      * For Mac: newsletter_mac.command
-    * Newsletter data downloaded from Qualtrics: CHER_News_Data_1.23.18.csv
+      * For Windows: [newsletter_win.bat](newsletter_win.bat)
+      * For Mac: [newsletter_mac.command](newsletter_mac.command)
+    * Newsletter data downloaded from Qualtrics: [CHER_News_Data_1.23.18.csv](CHER_News_Data_1.23.18.csv)
 3. Execute script by double-clicking the file:
-    * For Windows: newsletter_win.bat
-    * For Mac: newsletter_mac.command
+    * For Windows: [newsletter_win.bat](newsletter_win.bat)
+    * For Mac: [newsletter_mac.command](newsletter_mac.command)
 4. Select newsletter data downloaded from Qualtrics "CHER_News_Data_1.23.18.csv" and execute.
+![alt text](CHER_newsletter_script.PNG "Python Script Interface")
 5. Now you have 3 files in the same folder.
     * For updating in MailChimp: CHER_News_Data_1.23.18_email.html
     * For updating in News page in Wordpress: CHER_News_Data_1.23.18_wp.html
